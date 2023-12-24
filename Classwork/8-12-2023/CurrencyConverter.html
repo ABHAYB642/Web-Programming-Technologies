@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+     
+     function calculate()
+     {
+
+     let fc = document.getElementById("from").value;
+     console.log(fc);
+    
+     let tc = document.getElementById("to").value;
+     console.log(tc);
+     let no = document.getElementById("no1").value;
+     let exchange = {
+        "$":{  
+            "RS":83.42,
+            "EURO":0.93,
+            "POUND":0.80,
+            "$":1
+
+        },
+
+         "RS":{
+            "$":0.0119,
+            "EURO":0.011,
+            "POUND":0.0096,
+            "RS":1
+         },
+
+         "EURO":{
+           "POUND":0.86,
+            "RS":89.88,
+             "$":1.08,
+             "EURO":1
+         },
+
+         "POUND":{
+
+              "RS":104.69,
+              "EURO":1.16,
+              "$":1.25,
+              "POUND":1
+         }
+
+
+        }
+        
+        let amount ;
+         
+         amount = no * exchange[fc][tc];
+        document.getElementById("result").innerHTML = "<b>"+amount+"</b>";
+        
+    }
+
+    </script>
+</head>
+<style>
+    #d2 {
+       color: azure;
+       background-color: brown;
+       border-style: double;
+       border-color: blueviolet;
+       border-width: 4px;
+    }
+    #bt1{
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid black;
+    }
+    #head1{
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        align-items: center;
+        padding-top: 110px;
+    }
+</style>
+<body id="head1">
+    <h3 >Currency Converter</h3>
+    <div style="color: green;  
+    font-size: 20px;  
+    background-color:rgb(198, 224, 224);
+    border-radius: 10%;
+    border-color:darkslategray;
+    border-width: 10px;
+    text-align: center;
+    width: fit-content;
+    margin-left: 325px;
+    padding: 20px;
+    font-weight: bold;
+    border: 2px solid black;"
+    >
+   <div>  Enter Amount <input type="number" placeholder="Enter Number" id="no1"> <br><br>
+
+   </div>
+   
+    
+   <div>
+    From  
+
+    <select  id="from">
+        <option>Select From</option>
+        <option value="$"> $</option>
+        <option value="RS"> RS</option>
+        <option value="POUND">POUND</option>
+         <option value="EURO">EURO</option>  
+    </select>
+
+    <br><br>
+   </div>
+    
+
+
+   <div>
+    To
+    <select  id="to">
+        <option>Select to</option>
+        <option value="$"> $</option>
+        <option value="RS"> RS</option>
+        <option value="POUND">POUND</option>
+        <option value="EURO">EURO</option>  
+
+    </select>
+
+
+    <br><br>
+   </div>
+
+   <div>
+    <button onclick="calculate()" id="bt1">Submit</button>
+    <br>
+   </div>
+</div>
+   <br>
+   <p id="d2" style="margin-left: 375px; width: 200px; padding:4px ;">Total Amount = <span id ="result"></span></p>
+  
+
+</body>
+</html> 
+ 
