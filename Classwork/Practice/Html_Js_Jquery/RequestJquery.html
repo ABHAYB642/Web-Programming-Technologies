@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="C:\web Technology Practice\jquery3.7.1.js"></script>
+    <script>
+        $().ready(()=>{
+            $("#g").change(()=>{let id=$("#g").val();
+            $.get(`https://reqres.in/api/users/${id}`,(resp,req)=>{
+                $("p").text(`${resp.data.first_name}`)
+            });})
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+Select Id:-<input type="number"  id="g"/>
+<p id="p"></p>
+</body>
+</html>

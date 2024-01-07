@@ -14,11 +14,11 @@ x = 4
 //               break;
 // }
 
-// let a=1
-// while(a++ < 10)
-//  {
-//     console.log(a)
-//  }
+let a=1
+while(a++ < 10)
+ {
+    console.log(a)
+ }
 
 // a=2
 // do{

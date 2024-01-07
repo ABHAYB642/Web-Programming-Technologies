@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<script>
+    
+    let intervalstart
+    let cnt=0;
+    function starttime(){
+        intervalstart=setInterval(()=>{cnt++
+        document.getElementById("+").innerHTML=`${cnt}`},1000)
+    }
+    function stoptime(){
+        clearInterval(intervalstart)
+    }
+    function cleartime(){
+        cnt=0;
+        document.getElementById("+").innerHTML=`${cnt}`
+        clearInterval(intervalstart);
+    } 
+</script>
+<body>
+   <input type="button" value="START" onclick="starttime()"/><br>
+   <p id="+"></p><br>
+   <input type="button" value="STOP" onclick="stoptime()"/>
+   <input type="button" value="CLEAR" onclick="cleartime()"/>
+</body>
+</html>
+
+<html>

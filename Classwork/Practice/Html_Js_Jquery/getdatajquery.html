@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $().ready(()=>{
+                $("#n").change(()=>{let a=$("#n").val();
+                $("#i").click(()=>{$.get(`https://reqres.in/api/users/${a}`,(res)=>{
+                $("#p").text(res.data.first_name)
+                })
+                });}) 
+            })
+    </script>
+</head>
+<body>
+    <input type="number" min="1" max="10" id="n"/>
+    <input type="button" value="GET" id="i"/>
+    <p id="p"></p> 
+</body>
+</html>
